@@ -422,23 +422,27 @@ h3 {
 @media (max-width: 520px) {
   .site-header {
     position: static;
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
     padding: 14px 20px;
   }
 
   .brand {
-    max-width: 120px;
+    max-width: none;
     line-height: 1.25;
+    white-space: nowrap;
   }
 
   .brand span {
-    display: block;
+    display: inline;
   }
 
   nav {
     justify-content: flex-start;
     font-size: 0.94rem;
-    gap: 10px 16px;
+    gap: 8px 14px;
+    width: 100%;
   }
 
   .hero {
