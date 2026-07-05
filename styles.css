@@ -55,10 +55,6 @@ a {
   text-decoration: none;
 }
 
-.brand span {
-  display: inline;
-}
-
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -419,31 +415,33 @@ h3 {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 700px) {
   .site-header {
     position: static;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    justify-content: start;
     gap: 8px;
     padding: 14px 20px;
   }
 
   .brand {
+    display: block;
     max-width: none;
     line-height: 1.25;
     white-space: nowrap;
   }
 
-  .brand span {
-    display: inline;
-  }
-
   nav {
     justify-content: flex-start;
-    font-size: 0.94rem;
-    gap: 8px 14px;
+    font-size: 0.9rem;
+    gap: 8px 12px;
     width: 100%;
   }
+}
+
+@media (max-width: 520px) {
 
   .hero {
     padding: 24px 20px 28px;
