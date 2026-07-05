@@ -27,6 +27,11 @@ body {
   line-height: 1.55;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 a {
   color: inherit;
 }
@@ -54,7 +59,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 14px;
+  gap: 10px 14px;
   color: var(--muted);
   font-size: 0.95rem;
 }
@@ -77,6 +82,10 @@ nav a {
 
 .hero-copy {
   max-width: 780px;
+}
+
+.mobile-portrait {
+  display: none;
 }
 
 .eyebrow {
@@ -149,6 +158,50 @@ h3 {
 .button.secondary {
   color: var(--blue);
   background: rgba(255, 255, 255, 0.72);
+}
+
+.hero-side {
+  display: grid;
+  gap: 16px;
+  align-content: center;
+}
+
+.portrait-frame {
+  position: relative;
+  width: min(100%, 340px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  justify-self: center;
+  background: linear-gradient(145deg, #dfeaf2, #f8fbfc);
+  border: 1px solid rgba(217, 225, 234, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 22px 60px rgba(24, 33, 47, 0.16);
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait-frame span {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: var(--blue);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+}
+
+.portrait-frame.compact {
+  width: 96px;
+  border-radius: 50%;
+  box-shadow: 0 12px 32px rgba(24, 33, 47, 0.14);
+}
+
+.portrait-frame.compact span {
+  font-size: 1.65rem;
 }
 
 .hero-panel {
@@ -337,6 +390,19 @@ h3 {
     min-height: auto;
   }
 
+  .hero-side {
+    align-content: start;
+  }
+
+  .hero-side > .portrait-frame {
+    display: none;
+  }
+
+  .mobile-portrait {
+    display: block;
+    margin-bottom: 20px;
+  }
+
   .timeline article,
   .about-grid,
   .feature-project,
@@ -353,13 +419,107 @@ h3 {
 @media (max-width: 520px) {
   .site-header {
     position: static;
+    gap: 12px;
+    padding: 18px 20px;
+  }
+
+  .brand {
+    max-width: 120px;
+    line-height: 1.25;
   }
 
   nav {
     justify-content: flex-start;
+    font-size: 0.94rem;
+    gap: 10px 16px;
+  }
+
+  .hero {
+    padding: 32px 20px 38px;
+  }
+
+  .hero-panel {
+    gap: 10px;
+  }
+
+  .hero-panel div {
+    padding: 14px 16px;
+  }
+
+  .hero-panel span {
+    font-size: 1.3rem;
+  }
+
+  .hero-panel p {
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.55rem);
+    line-height: 1.08;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .eyebrow {
+    font-size: 0.76rem;
   }
 
   .button {
     width: 100%;
+  }
+
+  .section {
+    padding: 38px 20px;
+  }
+
+  .timeline article,
+  .project-grid article,
+  .skill-columns div {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header {
+    padding: 16px;
+  }
+
+  nav {
+    gap: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-inline: 16px;
+  }
+
+  h1 {
+    font-size: clamp(1.85rem, 8.8vw, 2.25rem);
+  }
+
+  .hero-copy > p:not(.eyebrow) {
+    font-size: 0.96rem;
+  }
+
+  .section {
+    padding-inline: 16px;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1080px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 310px;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 4vw, 3rem);
+  }
+
+  .portrait-frame {
+    width: min(100%, 280px);
   }
 }
