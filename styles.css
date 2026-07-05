@@ -168,14 +168,14 @@ h3 {
 
 .portrait-frame {
   position: relative;
-  width: min(100%, 340px);
-  aspect-ratio: 4 / 5;
+  width: 180px;
+  aspect-ratio: 1;
   overflow: hidden;
   justify-self: center;
   background: linear-gradient(145deg, #dfeaf2, #f8fbfc);
   border: 1px solid rgba(217, 225, 234, 0.95);
-  border-radius: 8px;
-  box-shadow: 0 22px 60px rgba(24, 33, 47, 0.16);
+  border-radius: 50%;
+  box-shadow: 0 16px 42px rgba(24, 33, 47, 0.14);
 }
 
 .portrait-frame img {
@@ -190,13 +190,12 @@ h3 {
   height: 100%;
   place-items: center;
   color: var(--blue);
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: 3rem;
   font-weight: 900;
 }
 
 .portrait-frame.compact {
-  width: 96px;
-  border-radius: 50%;
+  width: 86px;
   box-shadow: 0 12px 32px rgba(24, 33, 47, 0.14);
 }
 
@@ -520,6 +519,6 @@ h3 {
   }
 
   .portrait-frame {
-    width: min(100%, 280px);
+    width: 160px;
   }
 }
